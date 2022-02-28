@@ -1,0 +1,156 @@
+
+main{
+	class droneClass{
+		int side = 20;
+		int alt = 10;
+		int longSide = 20;
+     	int shortSide = 10;
+		float maxTime = 100;
+		float timer = 0;
+		int height = 20;
+		int maxHeight = 100;
+		double temp = 10;
+		double maxTemp = 100;
+		int count = 0;
+		heightMonitor = height;
+		maxMonitor = maxHeight;
+		continueVal = "Yes";
+		int angleCount = 0;
+	};
+		 
+		DRONE drone1();
+		DRONE drone2 = new DRONE(alt);
+	 
+		if(timer == 0){
+			launch;
+			connect_wifi;
+			timer++;
+		 }
+	 
+		while(timer <= maxTime){
+	 		timer++;
+		}
+
+	 	#Angle Count Is The Amount The Drone Has To Turn To Match Triangle Trajectory#
+	 	#Starting Position#
+	 	while(angleCount <= 30){
+		 	turn(right);
+		 	angleCount++;
+	 	}
+	 	#Start Moving The Triangle Edge#
+	 	for(int i = 0; i < side; i++){
+	 	 	get_orientation;
+	 	 	spray(pesticide);
+	 	 	move(forward);
+	 	}
+	 	angleCount = 0;
+	 	while(angleCount <= 120){
+	 		turn(right);
+	 		angleCount++;
+	 	}
+	 	for(int i = 0; i < side; i++){
+	 	 	get_orientation;
+	 	 	spray(pesticide);
+	 	 	move(forward);
+	 	}
+	 	angleCount = 0;
+	 	while(angleCount <= 120){
+	 		turn(right);
+	 		angleCount++;
+	 	}
+	 	for(int i = 0; i < side; i++){
+			get_orientation;
+			spray(pesticide);
+			move(forward);
+	 	}
+	 	#Returned to starting position#
+
+		#Rectangle Spray#
+		#Starting Position#
+	   	#Start Moving The Rectangle Edge#
+	   	for(int i = 0; i < shortSide; i++){
+	   		get_orientation;
+	   		spray(pesticide);
+	   		move(forward);
+	   	}
+	   	angleCount = 0;
+	   	while(angleCount <= 90){
+	   		turn(right);
+	   		angleCount++;
+	   	}
+	   
+	   	for(int i = 0; i < longSide; i++){
+	   		get_orientation;
+	   		spray(pesticide);
+	   		move(forward);
+	   	}
+	   
+	   	angleCount = 0;
+	   	while(angleCount <= 90){
+	   		turn(right);
+	   		angleCount++;
+	   	}
+	   
+	   	for(int i = 0; i < shortSide; i++){
+	   		get_orientation;
+	   		spray(pesticide);
+	   		move(forward);
+	   	}
+	   	angleCount = 0;
+	   	while(angleCount <= 90){
+	   		turn(right);
+	   		angleCount++;
+	   	}
+	   	for(int i = 0; i < longSide; i++){
+	   	   	get_orientation;
+	   	   	spray(pesticide);
+	   	   	move(forward);
+	   	}
+	   	#Returned to starting position#
+	 
+		if(timer == maxTime){
+	 		do{
+		 		descend;
+		 		deload;
+		 		maxMonitor--;
+	 	 
+	 	 	}while(maxMonitor >= heightMonitor);
+	 	 	
+	 	print("Program Over");
+	 	input(continueVal);
+	 	disconnect_wifi;
+	 	}
+	 	else{
+	 		spray(water);
+		}	
+		deload;
+	 
+		define int droneMonitor(int height, int maxHeight, double temp, double maxTemp, float timer, float maxTime){
+	 	if(height == maxHeight){
+	 		cout("Max height already");
+	 		read_height;
+	 	}
+	 	else{
+			while(height < maxHeight){
+			ASCEND;
+			heightMonitor++;	
+		 	} 
+		}
+	 	for(count = 1; count < maxTime; count++){
+	 		print("Connected to wifi");
+	 	}
+		#Comment#
+		return 1;
+	 }
+	 classObj cls = new classObj();
+	 private class myClass{
+	 	tempMonitor = 56;
+	 	floatVal = 72.5;
+	 	stringVal = "fly";
+	 };
+	 delete cls;
+	 drone1.droneMonitor(heightMonitor, maxMonitor, temp, maxTemp, timer, maxTime);
+	 heightMonitor(10, 100, 5.8, 100,2, 0, 201.9);
+	 return 0;
+	
+}
